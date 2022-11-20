@@ -82,8 +82,6 @@ modal.addEventListener('submit', (event) => {
 
     arr.forEach(ele => showData(ele));
    
-
-    // div.style.display = "none";
     document.getElementById('tab').style.display = "none";
     div2.style.display = "block";
     

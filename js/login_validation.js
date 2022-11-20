@@ -49,12 +49,6 @@ form.addEventListener('submit', (value) => {
 });
 
 
-// .matches(
-//   /^[0-9a-zA-Z!@#$%^&*?".,_()ǀǁ={}№+:;~<>]{6,}$/,
-//   'Password can not be less than 6 symbols and must contain at least 1 number'
-// )
-
-
 
 
 

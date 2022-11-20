@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="/css/login_page_style.css">
+  <title>Log in</title>
+  
+</head>
+<body onload="isActive()">
+  <div>
+    <p id="p1" style="display: none;">You already logged in</p>
+  </div>
+    <form id="form">
+        <div class="container">
+          <label for="email"><b>Email</b></label>
+          <input type="text" spellcheck="false" placeholder="Enter email" name="email" id="email"required>
+         
+    
+      
+          <label for="psw"><b>Password</b></label>
+          <input type="password" placeholder="Enter Password" name="psw" id="password" required>
+          <div id="error"></div>
+          <button id="login" type="submit">Login</button>
+        </div>
+      </form>
+        
+      <script src="/js/login_validation.js"></script>
+</body>
+
+</html>

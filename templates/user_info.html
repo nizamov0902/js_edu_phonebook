@@ -16,6 +16,7 @@
 <table id="tab"></table>
 </div>
 
+
 <button data-bs-toggle="modal" data-bs-target="#modal1" id="edit">Edit</button>
 
   <!--Modal-->
@@ -32,7 +33,7 @@
             <div class="row mb-3">
               <label for="inputId" class="label col-sm-2 col-form-label">ID</label>
               <div class="col-sm-10">
-                <input type="text" class="form-control" id="inputId" required disabled/>
+                <input type="text" class="form-control" id="inputId" required disabled></input>
               </div>
             </div>
             <fieldset>
@@ -40,7 +41,7 @@
                 <legend class="col-form-label col-sm-2">isActive</legend>
                 <div class="col sm-10">
                   <div class="form-check">
-                    <input type="checkbox" class="form-check-input" name="box" id="box1" value="true">
+                    <input type="checkbox" class="form-check-input" name="box" id="box1" value="true"></input>
                     <label for="box1" class="form-check-label"></label>
                   </div>
                 </div>
@@ -53,11 +54,17 @@
               </div>
             </div>
             <div class="row mb-3">
-              <label for="name" class="label col-sm-2 col-form-label">Name</label>
+              <label for="name" class="label col-sm-2 col-form-label">First Name</label>
               <div class="col-sm-10">
-                <input type="text" class="form-control" id="name" required></input>
+                <input type="text" class="form-control" id="fname" required></input>
               </div>
-            </div>
+              <div class="row mb-3">
+                <label for="name" class="label col-sm-2 col-form-label">Last Name</label>
+                <div class="col-sm-10">
+                  <input type="text" class="form-control" id="lname" required></input>
+                </div>
+              </div>
+              </div>
             <div class="row mb-3">
               <label for="company" class="label col-sm-2 col-form-label">Company</label>
               <div class="col-sm-10">
@@ -103,9 +110,10 @@
     </div>
 
   </div>
-   <!--Modal-->
-   <div id="new1" style="display: none;">The updated user info: </div> 
-
-
+   <!--Modal close-->
+   
+   <div>
+    <div id="new1" style="display: none;">The updated user info: </div> 
+   </div>
 </body>
 </html>

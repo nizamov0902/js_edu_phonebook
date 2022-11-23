@@ -7,18 +7,31 @@ let globalData = [];
 let letter = "";
 const registeredAt = new Date();
 
-btn01.addEventListener('click', reqData);
+let phones = {};
+
+// btn01.addEventListener('click', reqData);
 
 
 function deleteUser(id) {
     document.getElementById(id).remove();
 }
 
+
 function reqData() {
     fetch(url)
       .then(res => res.json())
-      .then(data => adder(data));
+      .then(data => {
+        const localData = JSON.parse(localStorage.getItem('phones'));
+        if (localData) {
+            adder(localData);
+        } else {
+        localStorage.setItem('phones', JSON.stringify(data));
+        adder(data);
+        }
+    });
+      
 }
+
 
 function adder(data) {
     const sortedData = data.sort((a, b) => a.name.first > b.name.first ? 1 : -1);
@@ -38,7 +51,13 @@ function adder(data) {
 
        li.setAttribute("id", `${element.id}`);
        i.setAttribute("class", "fas fa-times delete");
-       i.addEventListener('click', function() {deleteUser(element.id);});
+       i.addEventListener('click', function() {
+    
+        const localData = JSON.parse(localStorage.getItem('phones'));
+        const filteredData = localData.filter((item) => item.id !== element.id);
+        localStorage.setItem('phones', JSON.stringify(filteredData));
+        deleteUser(element.id);
+    });
 
 
        if (letter !== element.name.first.charAt(0)) {
@@ -55,29 +74,35 @@ function adder(data) {
     });  
 }
 
+
+
 function showData(ele) {
     const p = document.createElement("p");
     ele == registered ? p.innerText = registeredAt : p.innerText = ele.value;
     div.appendChild(p);
 }
 
-modal.addEventListener('submit', (event) => {
-    event.preventDefault();
-    console.dir(modal);
+// modal.addEventListener('submit', (event) => {
+//     event.preventDefault();
+//     console.dir(modal);
 
-    const {age, name, company} = event.target.elements;
-    console.log(age.value, email.value);
+//     const {age, name, company} = event.target.elements;
+//     console.log(age.value, email.value);
     
-    const arr = [inputId, box1, age, name, company, email, phone, address, registered];
-    console.log(arr);
-    arr.forEach(ele => showData(ele));
+//     const arr = [inputId, box1, age, name, company, email, phone, address, registered];
+//     console.log(arr);
+//     arr.forEach(ele => showData(ele));
    
-    div.style.display = "block";
+//     div.style.display = "block";
 
 
     
-    setTimeout(() => modal.reset(), 2000);
+//     setTimeout(() => modal.reset(), 2000);
     
-});
+// });
 
+document.getElementById('add').addEventListener('click', () => window.open("/templates/add.html"))
+
+
+setTimeout(() => console.log(globalData), 3000);
 

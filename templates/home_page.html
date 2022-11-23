@@ -8,105 +8,15 @@
   <link href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" rel="stylesheet"/>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
 </head>
-<body>
+<body onload="reqData()">
 
 <div class="container">
   <h1>All numbers</h1>
 
-  <button data-bs-toggle="modal" data-bs-target="#modal1">Add number</button>
-
-  <!--Modal-->
-  <div class="modal fade" id="modal1" tabindex="-1" aria-bs-labelledb="modal1Label1" aria-hidden="true">
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="modal-header">
-          <div class="h5 modal-title" id="modal1Label1">Add information</div>
-          <div class="btn-close" data-bs-dismiss="modal" aria-bs-label="close"></div>
-
-        </div>
-        <div class="modal-body">
-          <form action="" id="mainForm">
-            <div class="row mb-3">
-              <label for="inputId" class="label col-sm-2 col-form-label">ID</label>
-              <div class="col-sm-10">
-                <input type="text" class="form-control" id="inputId" required></input>
-              </div>
-            </div>
-            <fieldset>
-              <div class="row mb-3">
-                <legend class="col-form-label col-sm-2">isActive</legend>
-                <div class="col sm-10">
-                  <div class="form-check">
-                    <input type="checkbox" class="form-check-input" name="box" id="box1" value="true">
-                    <label for="box1" class="form-check-label"></label>
-                  </div>
-                </div>
-              </div>
-            </fieldset>
-            <div class="row mb-3">
-              <label for="age" class="label col-sm-2 col-form-label">Age</label>
-              <div class="col-sm-10">
-                <input type="number" class="form-control" id="age" min="1" max="120" required></input>
-              </div>
-            </div>
-            <div class="row mb-3">
-              <label for="name" class="label col-sm-2 col-form-label">Name</label>
-              <div class="col-sm-10">
-                <input type="text" class="form-control" id="name" required></input>
-              </div>
-            </div>
-            <div class="row mb-3">
-              <label for="company" class="label col-sm-2 col-form-label">Company</label>
-              <div class="col-sm-10">
-                <input type="text" class="form-control" id="company"></input>
-              </div>
-            </div>
-            <div class="row mb-3">
-              <label for="email" class="label col-sm-2 col-form-label">Email</label>
-              <div class="col-sm-10">
-                <input type="email" class="form-control" id="email" required></input>
-              </div>
-            </div>
-            <div class="row mb-3">
-              <label for="phone" class="label col-sm-2 col-form-label">Phone</label>
-              <div class="col-sm-10">
-                <input type="number" class="form-control" id="phone" required></input>
-              </div>
-            </div>
-            <div class="row mb-3">
-              <label for="address" class="label col-sm-2 col-form-label">Address</label>
-              <div class="col-sm-10">
-                <input type="text" class="form-control" id="address"></input>
-              </div>
-            </div>
-            <div class="row mb-3">
-              <label for="registered" class="label col-sm-2 col-form-label">Registered</label>
-              <div class="col-sm-10">
-                <input type="text" class="form-control" id="registered" disabled></input>
-              </div>
-            </div>
-          </form>
-
-        </div>
-        <div class="modal-footer">
-          <div class="btn btn secondary" data-bs-dismiss="modal">Close</div>
-          <div>
-            <button type="submit" class="btn btn secondary" id="save" form="mainForm" data-bs-dismiss="modal">Save</button>
-          </div>
-
-        </div>
-      </div>
-    
-    </div>
-
-  </div>
-   <!--Modal-->
+  <button id="add">Add number</button>
 
  <div id="new1" style="display: none;">The new user info: </div> 
 
-<div class = "col-sm-3 p-3 bg-primary text-white">
-    <button type="submit" id="btn01">Show data</button>
-</div>
 <div>
   <ul id="list">
   </ul>

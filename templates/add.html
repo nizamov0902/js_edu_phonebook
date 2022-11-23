@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <title>Add a number</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet">
+        <link href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" rel="stylesheet"/>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+      </head>
+<body onload="reqData()">
+    <div>
+        <div>
+            <h1>Add a new number</h1>
+        </div>
+        <div class="input-group mb-3 w-90">
+            <form action="" id="mainForm" style="display: block">
+                <div class="row mb-3">
+                  <label for="inputId" class="label col-sm-2 col-form-label">ID</label>
+                  <div class="col-sm-10">
+                    <input type="text" class="form-control" id="inputId" required></input>
+                  </div>
+                </div>
+                <fieldset>
+                  <div class="row mb-3">
+                    <legend class="col-form-label col-sm-2">isActive</legend>
+                    <div class="col sm-10">
+                      <div class="form-check">
+                        <input type="checkbox" class="form-check-input" name="box" id="box1" value="true">
+                        <label for="box1" class="form-check-label"></label>
+                      </div>
+                    </div>
+                  </div>
+                </fieldset>
+                <div class="row mb-3">
+                  <label for="age" class="label col-sm-2 col-form-label">Age</label>
+                  <div class="col-sm-10">
+                    <input type="number" class="form-control" id="age" min="1" max="120" required></input>
+                  </div>
+                </div>
+                <div class="row mb-3">
+                  <label for="name" class="label col-sm-2 col-form-label">First Name</label>
+                  <div class="col-sm-10">
+                    <input type="text" class="form-control" id="fname" required></input>
+                  </div>
+                  <div class="row mb-3">
+                    <label for="name" class="label col-sm-2 col-form-label">Last Name</label>
+                    <div class="col-sm-10">
+                      <input type="text" class="form-control" id="lname" required></input>
+                    </div>
+                </div>
+                <div class="row mb-3">
+                  <label for="company" class="label col-sm-2 col-form-label">Company</label>
+                  <div class="col-sm-10">
+                    <input type="text" class="form-control" id="company"></input>
+                  </div>
+                </div>
+                <div class="row mb-3">
+                  <label for="email" class="label col-sm-2 col-form-label">Email</label>
+                  <div class="col-sm-10">
+                    <input type="email" class="form-control" id="email" required></input>
+                  </div>
+                </div>
+                <div class="row mb-3">
+                  <label for="phone" class="label col-sm-2 col-form-label">Phone</label>
+                  <div class="col-sm-10">
+                    <input type="number" class="form-control" id="phone" required></input>
+                  </div>
+                </div>
+                <div class="row mb-3">
+                  <label for="address" class="label col-sm-2 col-form-label">Address</label>
+                  <div class="col-sm-10">
+                    <input type="text" class="form-control" id="address"></input>
+                  </div>
+                </div>
+                <div class="row mb-3">
+                  <label for="registered" class="label col-sm-2 col-form-label">Registered</label>
+                  <div class="col-sm-10">
+                    <input type="text" class="form-control" id="registered" disabled></input>
+                  </div>
+                </div>
+                <div>
+                  <button type="submit" class="btn btn secondary" id="save" form="mainForm">Save</button>
+                </div>
+              </form>
+        </div>
+        
+    </div>
+    
+<div id="new1" style="display: none;">The updated user info: </div> 
+
+  
+        
+      <script src="/js/add_number.js"></script>
+</body>
+
+</html>

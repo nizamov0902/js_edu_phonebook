@@ -80,7 +80,8 @@
             <div class="row mb-3">
               <label for="phone" class="label col-sm-2 col-form-label">Phone</label>
               <div class="col-sm-10">
-                <input type="text" class="form-control" id="phone" required></input>
+                <input type="tel" class="form-control" id="phone" onchange="formatPhoneNumber()" required></input>
+                <small>Format: +1 (234) 567 8901</small><br><br>
               </div>
             </div>
             <div class="row mb-3">
@@ -101,7 +102,7 @@
         <div class="modal-footer">
           <div class="btn btn secondary" data-bs-dismiss="modal">Close</div>
           <div>
-            <button type="submit" class="btn btn secondary" id="save" form="mainForm" data-bs-dismiss="modal">Save</button>
+            <button type="submit" class="btn btn secondary" id="save" form="mainForm" >Save</button>
           </div>
 
         </div>

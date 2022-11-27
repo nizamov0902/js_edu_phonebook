@@ -23,34 +23,6 @@ function reqData() {
 }
 
 
-// const params = new Proxy(new URLSearchParams(window.location.search), {
-//     get: (searchParams, prop) => searchParams.get(prop),
-//   });
-//   let userId = params.user; 
-//   console.log(userId);
-
-
-
-// function showUser() {
-//     const userInfo = data.find(data => data.id == userId);
-//     user = userInfo;
-
-
-//     console.log(user);
-//     console.log(user.phone);
-
-//     document.getElementById('inputId').value = user.id;
-//     document.getElementById('box1').value = user.isActive;
-//     document.getElementById('age').value = user.age;
-//     document.getElementById('name').value = user.name.first + " " + user.name.last;
-//     document.getElementById('company').value = user.company;
-//     document.getElementById('email').value = user.email;
-//     document.getElementById('phone').value = user.phone;
-//     document.getElementById('address').value = user.address;
-//     document.getElementById('registered').value = user.registered;
-    
-//   };
-
 function showData(ele) {
     const p = document.createElement("p");
     ele == registered ? p.innerText = registeredAt : p.innerText = ele.value;
@@ -59,7 +31,7 @@ function showData(ele) {
 
 modal.addEventListener('submit', (event) => {
     event.preventDefault();
-    console.dir(modal);
+    // console.dir(modal);
 
     const {age, name, company} = event.target.elements;
     console.log(age.value, email.value);
@@ -71,6 +43,9 @@ modal.addEventListener('submit', (event) => {
     div.style.display = "block";
     modal.style.display = "none";
 
+    let userNumber = phone.value;
+    let formattedNumber = formatPhoneNumber(userNumber);
+
    const newNumber = [{
     "id": inputId.value,
     "isActive": box1.value,
@@ -81,7 +56,7 @@ modal.addEventListener('submit', (event) => {
     },
     "company": company.value,
     "email": email.value,
-    "phone": phone.value,
+    "phone": formattedNumber,
     "address": address.value,
     "registered": registeredAt 
    }];
@@ -96,10 +71,16 @@ modal.addEventListener('submit', (event) => {
 
     localStorage.setItem('phones', JSON.stringify(filteredData));
 
-    
-
-
-    
     // setTimeout(() => modal.reset(), 2000);
     
 });
+
+function formatPhoneNumber(value) {
+  let cleaned = ('' + value).replace(/\D/g, '');
+  let match = cleaned.match(/^(1|)?(\d{3})(\d{3})(\d{4})$/);
+  if (match) {
+    let intlCode = (match[1] ? '+1 ' : '');
+    return [intlCode, '(', match[2], ') ', match[3], '-', match[4]].join('');
+  }
+  return null;
+};

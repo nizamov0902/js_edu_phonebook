@@ -93,7 +93,11 @@ modal.addEventListener('submit', (event) => {
    
     document.getElementById('tab').style.display = "none";
     div2.style.display = "block";
+    editBtn.style.display = "none";
 
+    let userNumber = phone.value;
+    let formattedNumber = formatPhoneNumber(userNumber);
+    // console.log(formattedNumber);
 
     const updatedInfo = {
       "id": inputId.value,
@@ -105,7 +109,7 @@ modal.addEventListener('submit', (event) => {
       },
       "company": company.value,
       "email": email.value,
-      "phone": phone.value,
+      "phone": formattedNumber,
       "address": address.value,
       "registered": user.registered 
      };
@@ -127,3 +131,14 @@ modal.addEventListener('submit', (event) => {
     
 });
   
+
+function formatPhoneNumber(value) {
+  let cleaned = ('' + value).replace(/\D/g, '');
+  let match = cleaned.match(/^(1|)?(\d{3})(\d{3})(\d{4})$/);
+  if (match) {
+    let intlCode = (match[1] ? '+1 ' : '');
+    return [intlCode, '(', match[2], ') ', match[3], '-', match[4]].join('');
+  }
+  return null;
+};
+// console.log(formatPhoneNumber(+12345678909));
